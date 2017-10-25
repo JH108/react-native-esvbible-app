@@ -9,7 +9,7 @@ export default class App extends React.Component {
           <Text style={styles.heavens}>
             The heavens declare the glory of God, and the sky above proclaims his handiwork.
           </Text>
-          <Image source={'./fullsizeoutput_155.png'} />
+          <Image source={require('./fullsizeoutput_155.png')} />
         </View>
       </View>
     );
@@ -28,13 +28,14 @@ const styles = StyleSheet.create({
   overlay: {
     flexGrow: 1,
     justifyContent: 'center',
-    backgroundColor: rgba(253, 183, 73, .15),
+    backgroundColor: 'rgba(253, 183, 73, .15),'
   },
   heavens: {
     alignSelf: 'center',
     textAlign: 'center',
-    fontFamily: 'Apple Chancry',
-    color: '#9edb58',
+    color: '#44aa66',
     zIndex: 1,
+    position: 'absolute',
+    fontWeight: 'bold',
   },
 });

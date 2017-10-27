@@ -1,14 +1,19 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableHighlight } from 'react-native';
 
 export default class Header extends React.PureComponent {
   render() {
     return (
       <View style={styles.header}>
-        <Image style={styles.image} source={require('./ic_menu_2x.png')} />
-        <Text style={styles.headerText}>
-          Genesis 1
-        </Text>
+        <TouchableHighlight>
+          <Image
+            onPress={() => {
+              this.props.nav('TableOfContents');
+            }}
+            style={styles.image} source={require('./ic_menu_2x.png')}
+          />
+        </TouchableHighlight>
+        <Text style={styles.headerText}>Genesis 1</Text>
       </View>
     );
   }
@@ -22,6 +27,7 @@ const styles = StyleSheet.create({
     alignSelf: 'stretch',
     marginTop: 0,
     backgroundColor: '#918f84',
+    zIndex: 2,
   },
   image: {
     marginLeft: 10,

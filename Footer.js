@@ -5,7 +5,7 @@ export default class Footer extends React.PureComponent {
   render() {
     return (
       <View style={styles.footer}>
-        <Text style={styles.startReading}>Start Reading Now</Text>
+        <Text onPress={() => this.props.nav('TableOfContents')} style={styles.startReading}>Start Reading Now</Text>
       </View>
     );
   }

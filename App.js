@@ -1,26 +1,19 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
+import { StackNavigator } from 'react-navigation';
 import Header from './Header';
 import Homepage from './Homepage';
-import Footer from './Footer';
+import TableOfContents from './TableOfContents/TableOfContents.js';
+
+const Nav = StackNavigator({
+  Home: { screen: Homepage },
+  TableOfContents: { screen: TableOfContents },
+});
 
 export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Header />
-        <Homepage />
-        <Footer />
-      </View>
+      <Nav />
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'column',
-  },
-});

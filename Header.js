@@ -5,11 +5,10 @@ export default class Header extends React.PureComponent {
   render() {
     return (
       <View style={styles.header}>
-        <TouchableHighlight>
-          <Image
-            onPress={() => {
+        <TouchableHighlight onPress={() => {
               this.props.nav('TableOfContents');
-            }}
+            }}>
+          <Image
             style={styles.image} source={require('./ic_menu_2x.png')}
           />
         </TouchableHighlight>
